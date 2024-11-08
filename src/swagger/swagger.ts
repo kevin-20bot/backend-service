@@ -6,7 +6,7 @@ const swaggerOptions: Options = {
     info: {
       title: "Backend Service API",
       version: "1.0.0",
-      description: "API para Catálogo de Productos y Gestión de Pedidos",
+      description: "API para Catálogo de Ropa-Almacen y Gestión de Pedidos",
     },
     servers: [
       {
