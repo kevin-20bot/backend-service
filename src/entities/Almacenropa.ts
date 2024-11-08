@@ -13,4 +13,10 @@ export class Almacenropa {
 
   @Column("decimal")
   price!: number;
+
+  @Column()
+  marca! : string
+  
+  @Column("tipo de cuerpo")
+  talla! : string
 }
