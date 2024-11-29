@@ -15,8 +15,11 @@ export class Almacenropa {
   price!: number;
 
   @Column()
-  marca! : string
+  marca! : string;
   
   @Column("tipo de cuerpo")
-  talla! : string
+  talla! : string;
+
+  @Column("text")
+  imgUrl! : string;
 }

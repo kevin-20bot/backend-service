@@ -34,12 +34,12 @@ export const getProductById = async(req: Request, res: Response) => {
 // POST - Crear un nuevo Producto
 export const createProduct = async(req: Request, res: Response) => {
   try {
-    const { name, description, price } = req.body;
+    const { name, description, price, imgUrl } = req.body;
     const product = new Almacenropa();
     product.name = name;
     product.description = description;
     product.price = price;
-
+    product.imgUrl = imgUrl;
     await productRepository.save(product);
     res.status(201).json(product);
   } catch(error) {
@@ -50,7 +50,7 @@ export const createProduct = async(req: Request, res: Response) => {
 // PUT - Actualizar un Almacenropa existente
 export const updateProduct = async(req: Request, res: Response) => {
   try {
-    const { name, description, price } = req.body;
+    const { name, description, price, imgUrl } = req.body;
     const Almacenropa = await productRepository.findOneBy({
       id: parseInt(req.params.id),
     });
@@ -59,7 +59,7 @@ export const updateProduct = async(req: Request, res: Response) => {
       Almacenropa.toString = name ?? Almacenropa;
       Almacenropa.toString = description ?? Almacenropa.price;
       Almacenropa.toString = price ?? Almacenropa.price;
-
+      Almacenropa.toString = imgUrl ?? Almacenropa.imgUrl;
       await productRepository.save(Almacenropa);
       res.json(Almacenropa);
     } else {

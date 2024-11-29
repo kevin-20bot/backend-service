@@ -65,6 +65,7 @@ productRoutes.get("/:id", getProductById);
  *               - name
  *               - description
  *               - price
+ *               - imgUrl
  *             properties:
  *               name:
  *                 type: string
@@ -72,6 +73,8 @@ productRoutes.get("/:id", getProductById);
  *                 type: string
  *               price:
  *                 type: number
+ *               imgUrl:
+ *                 type: string
  *     responses:
  *       201:
  *         description: Producto creado
@@ -105,6 +108,8 @@ productRoutes.post("/", createProduct);
  *               description:
  *                 type: string
  *               price:
+ *                 type: number
+ *               imgUrl:
  *                 type: number
  *     responses:
  *       200:
