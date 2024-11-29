@@ -17,7 +17,7 @@ export class Almacenropa {
   @Column()
   marca! : string;
   
-  @Column("tipo de cuerpo")
+  @Column("text")
   talla! : string;
 
   @Column("text")

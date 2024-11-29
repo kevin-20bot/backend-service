@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-
+  getAllalmacenropa,
   getProductById,
   createProduct,
   updateProduct,
@@ -26,7 +26,7 @@ const productRoutes = Router();
  *       200:
  *         description: Lista de productos
  */
-productRoutes.get("/", );
+productRoutes.get("/", getAllalmacenropa);
 
 /**
  * @swagger
@@ -65,6 +65,8 @@ productRoutes.get("/:id", getProductById);
  *               - name
  *               - description
  *               - price
+ *               - marca
+ *               - talla
  *               - imgUrl
  *             properties:
  *               name:
@@ -73,6 +75,10 @@ productRoutes.get("/:id", getProductById);
  *                 type: string
  *               price:
  *                 type: number
+ *               marca:
+ *                 type: string
+ *               talla:
+ *                 type: string
  *               imgUrl:
  *                 type: string
  *     responses:
@@ -109,8 +115,12 @@ productRoutes.post("/", createProduct);
  *                 type: string
  *               price:
  *                 type: number
+ *               marca:
+ *                 type: string
+ *               talla:
+ *                 type: string
  *               imgUrl:
- *                 type: number
+ *                 type: string
  *     responses:
  *       200:
  *         description: Producto actualizado
